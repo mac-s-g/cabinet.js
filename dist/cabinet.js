@@ -110,30 +110,21 @@ var StorageFactory = function StorageFactory(storageType) {
 exports.default = StorageFactory;
 
 },{"./Entry":1,"./utilities":4}],3:[function(require,module,exports){
-'use strict';
+"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _StorageFactory = require('./StorageFactory');
+var _StorageFactory = require("./StorageFactory");
 
 var _StorageFactory2 = _interopRequireDefault(_StorageFactory);
 
-var _utilities = require('./utilities');
+var _utilities = require("./utilities");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Cabinet = void 0;
-
 if ((0, _utilities.storageSupported)()) {
-	Cabinet = new _StorageFactory2.default('local');
-	Cabinet.session = new _StorageFactory2.default('session');
-} else {
-	console.error('cabinet.js: local storage not supported');
+  var cabinet = new _StorageFactory2.default("local");
+  cabinet.session = new _StorageFactory2.default("session");
+  window.Cabinet = cabinet;
 }
-
-exports.default = Cabinet;
 
 },{"./StorageFactory":2,"./utilities":4}],4:[function(require,module,exports){
 'use strict';

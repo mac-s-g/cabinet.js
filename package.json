@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "A simple interface for accessing local and session storage",
   "main": "dist/cabinet.js",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "grunt",
     "dev": "grunt watch"
